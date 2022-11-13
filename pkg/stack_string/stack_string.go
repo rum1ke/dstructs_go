@@ -16,14 +16,14 @@ func NewStackString() *stack {
 
 // Create new element on the top of the stack.
 // Stack elements number rises by one.
-// TC: O(1)
+// Time Complexity: O(1)
 func (s *stack) Push(value *string) {
 	s.top = &node{value: value, lower: s.top}
 }
 
 // Gets value and removes element from the top of the stack.
 // Stack elements number reduces by one.
-// TC: O(1)
+// Time Complexity: O(1)
 func (s *stack) Pop() *string {
 	if s.top == nil {
 		return nil

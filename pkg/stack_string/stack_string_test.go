@@ -20,7 +20,7 @@ func TestPush(t *testing.T) {
 			newStack.Push(&ent.pushing[idx])
 
 			if *newStack.top.value != ent.must[idx] {
-				t.Error("wrong push. Pushed, Must:", ent.pushing[idx], ent.must[idx])
+				t.Error("Wrong push. Pushed, Must:", ent.pushing[idx], ent.must[idx])
 			}
 		}
 	}
@@ -48,7 +48,7 @@ func TestPop(t *testing.T) {
 			popped := newStack.Pop()
 
 			if ent.must[idx] != *popped {
-				t.Error("wrong pop. Popped, Must:", *popped, ent.must[idx])
+				t.Error("Wrong pop. Popped, Must:", *popped, ent.must[idx])
 			}
 		}
 	}

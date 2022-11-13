@@ -13,14 +13,14 @@ func TestPush(t *testing.T) {
 		},
 	}
 
-	for _, ent := range testTable {
+	for _, test := range testTable {
 		newStack := NewStackString()
 
-		for idx := range ent.pushing {
-			newStack.Push(&ent.pushing[idx])
+		for idx := range test.pushing {
+			newStack.Push(&test.pushing[idx])
 
-			if *newStack.top.value != ent.must[idx] {
-				t.Error("Wrong push. Pushed, Must:", ent.pushing[idx], ent.must[idx])
+			if *newStack.top.value != test.must[idx] {
+				t.Error("Wrong push. Pushed, Must:", test.pushing[idx], test.must[idx])
 			}
 		}
 	}
@@ -37,18 +37,18 @@ func TestPop(t *testing.T) {
 		},
 	}
 
-	for _, ent := range testTable {
+	for _, test := range testTable {
 		newStack := NewStackString()
 
-		for idx := range ent.pushing {
-			newStack.Push(&ent.pushing[idx])
+		for idx := range test.pushing {
+			newStack.Push(&test.pushing[idx])
 		}
 
-		for idx := range ent.must {
+		for idx := range test.must {
 			popped := newStack.Pop()
 
-			if ent.must[idx] != *popped {
-				t.Error("Wrong pop. Popped, Must:", *popped, ent.must[idx])
+			if test.must[idx] != *popped {
+				t.Error("Wrong pop. Popped, Must:", *popped, test.must[idx])
 			}
 		}
 	}
